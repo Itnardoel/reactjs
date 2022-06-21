@@ -1,11 +1,12 @@
 import logo from '../logo.svg';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
         <header style={styles.cabecera}>
 
             <img style={styles.imagen} src={logo} className="App-logo" alt="" />
-            
+
             <h1>Tienda</h1>
             
             <ul style={styles.lista}>
@@ -18,8 +19,14 @@ const NavBar = () => {
                 <li>
                     <a style={styles.enlaces} href="#!">Nosotros</a>
                 </li>
+                <li>
+                    <CartWidget />
+                </li>
+                <li>
+                    <span>4</span>
+                </li>
             </ul>
-            
+  
         </header>
     )
 }
@@ -35,7 +42,7 @@ const styles = {
         color: '#fff',
     },
     imagen: {
-        width: '10%',
+        width: 60,
     },
     lista: {
         display: 'flex',
