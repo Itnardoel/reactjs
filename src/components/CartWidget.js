@@ -1,8 +1,11 @@
 import cart from '../assets/cart.svg'
 
-const CartIcon = () => {
+const CartIcon = ({cantidad}) => {
     return (
-        <img style={styles.carrito} src={cart} alt="cart" />
+        <>
+            <img style={styles.carrito} src={cart} alt="cart" />
+            <span>{cantidad}</span>
+        </>
     )
 }
 

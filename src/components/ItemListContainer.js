@@ -1,5 +1,5 @@
-const ItemListContainer = () => {
-    return <h2>Catalogo</h2>
+const ItemListContainer = ({catalogo}) => {
+    return <h2>{catalogo}</h2>
 }
 
 export default ItemListContainer;
