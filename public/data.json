@@ -1,0 +1,11 @@
+[
+    {"id": 1, "title": "Persona 5 Royal", "price": 8000, "description": "descripcion del producto", "pictureUrl": "./assets/persona-5-royal.jpg"},
+    {"id": 2, "title": "Chrono Cross - The Radical Dreamers Edition", "price": 9500,"description": "descripcion del producto", "pictureUrl": "./assets/chrono-cross.jpg"},
+    {"id": 3, "title": "Xenoblade Chronicles 2", "price": 9800,"description": "descripcion del producto", "pictureUrl": "./assets/xenoblade-chronicles-2.jpg"},
+    {"id": 4, "title": "Hollow Knight", "price": 5600,"description": "descripcion del producto", "pictureUrl": "./assets/hollow-knight.jpg"},
+    {"id": 5, "title": "Tales of Arise", "price": 7790,"description": "descripcion del producto", "pictureUrl": "./assets/box-art-tales-of-arise-portada-playstation-4-japon.jpg"},
+    {"id": 6, "title": "Fire Emblem Three Houses", "price": 8540,"description": "descripcion del producto", "pictureUrl": "./assets/fire-emblem_three-houses_portada.jpg"},
+    {"id": 7, "title": "Devil May Cry 5 - Special Edition", "price": 9452,"description": "descripcion del producto", "pictureUrl": "./assets/devil_may_cry_ps5.jpg"},
+    {"id": 8, "title": "Tokyo Mirage Sessions #FE Encore", "price": 8253,"description": "descripcion del producto", "pictureUrl": "./assets/81KECtiGbtL._SY500_.jpg"},
+    {"id": 9, "title": "Octopath Traveler", "price": 9367,"description": "descripcion del producto", "pictureUrl": "./assets/octopath-traveler-switch-cover.jpg"}
+]

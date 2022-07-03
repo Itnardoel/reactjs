@@ -36,7 +36,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button onClick={() => {
                     if (stock >= 1){
                         onAdd(contador);
-                        console.log(contador) //para saber si me toma bien el stock agregado
                     }
                 }}>
                     Agregar al carrito
