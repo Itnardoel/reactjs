@@ -4,7 +4,7 @@ const Item = ({ item }) => {
       <div style={styles.card}>
         <img style={styles.imagen} src={item.pictureUrl} alt={item.title} />
         <h2>{item.title}</h2>
-        <p>{item.description}</p>
+        {/* <p>{item.description}</p> */}
         <p>${item.price}</p>
       </div>
     </>
