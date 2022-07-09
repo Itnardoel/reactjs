@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
 
@@ -27,8 +28,8 @@ const ItemDetailContainer = () => {
   return (
     <>
         {loading ? <p>...Loading</p> : 
-                error ? <p>Error</p> :
-                    <ItemDetail item={item}/>}
+            error ? <p>Error</p> :
+                <ItemDetail item={item}/>}
     </>
   )
 }

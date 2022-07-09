@@ -1,11 +1,63 @@
 [
-    {"id": 1, "title": "Persona 5 Royal", "price": 8000, "description": " Vuelve a unirte a los Ladrones Fantasma en una versión extendida y reelaborada del aclamado juego de rol.\n Como ampliación del lanzamiento original de 2017, Persona 5 Royal viene repleto de nuevos personajes, confidentes, historia y ubicaciones, además de incluir una nueva mecánica de gancho para acceder de forma sigilosa a áreas nunca vistas.\n Explora Tokio, desbloquea nuevos Personas (demonios de las mazmorras de ensueño que lucharán para ti), personaliza la Guarida de los Ladrones, descubre una nueva historia añadida, nuevas cinemáticas, finales alternativos y mucho más.\n Persona 5 Royal mantiene su distintivo estilo visual, mientras que el compositor nominado a varios premios, Shoji Meguro, vuelve con una banda sonora totalmente nueva. ", "pictureUrl": "https://www.almadigitales.net/wp-content/uploads/2020/12/persona-5-royal.jpg"},
-    {"id": 2, "title": "Chrono Cross - The Radical Dreamers Edition", "price": 9500,"description": "descripcion del producto", "pictureUrl": "https://picfiles.alphacoders.com/508/thumb-1920-508066.jpg"},
-    {"id": 3, "title": "Xenoblade Chronicles 2", "price": 9800,"description": "descripcion del producto", "pictureUrl": "https://m.media-amazon.com/images/I/91oFP7GhmSL._SL1500_.jpg"},
-    {"id": 4, "title": "Hollow Knight", "price": 5600,"description": "descripcion del producto", "pictureUrl": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d18c832e8c956b4ef8b92862e6bf470d.png"},
-    {"id": 5, "title": "Tales of Arise", "price": 7790,"description": "descripcion del producto", "pictureUrl": "https://eccdn.geo-online.co.jp/ec_media_images/5135137-01.jpg"},
-    {"id": 6, "title": "Fire Emblem Three Houses", "price": 8540,"description": "descripcion del producto", "pictureUrl": "https://www.nintendo.com/ph/switch/anvy/img/hero_sp.jpg"},
-    {"id": 7, "title": "Devil May Cry 5 - Special Edition", "price": 9452,"description": "descripcion del producto", "pictureUrl": "https://pbs.twimg.com/media/EiKIg45XgAEV7PU.png"},
-    {"id": 8, "title": "Tokyo Mirage Sessions #FE Encore", "price": 8253,"description": "descripcion del producto", "pictureUrl": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/880/465/products/725602_front1-af5190f6975a4da21516364952256445-640-0.jpg"},
-    {"id": 9, "title": "Octopath Traveler", "price": 9367,"description": "descripcion del producto", "pictureUrl": "https://s3.gaming-cdn.com/images/products/2885/orig-fallback-v1/octopath-traveler-switch-switch-juego-nintendo-eshop-europe-cover.jpg?v=1644775801"}
+    {   "id": 1,
+        "title": "Persona 5 Royal",
+        "price": 8000,
+        "description": " Vuelve a unirte a los Ladrones Fantasma en una versión extendida y reelaborada del aclamado juego de rol.\n Como ampliación del lanzamiento original de 2017, Persona 5 Royal viene repleto de nuevos personajes, confidentes, historia y ubicaciones, además de incluir una nueva mecánica de gancho para acceder de forma sigilosa a áreas nunca vistas.\n Explora Tokio, desbloquea nuevos Personas (demonios de las mazmorras de ensueño que lucharán para ti), personaliza la Guarida de los Ladrones, descubre una nueva historia añadida, nuevas cinemáticas, finales alternativos y mucho más.\n Persona 5 Royal mantiene su distintivo estilo visual, mientras que el compositor nominado a varios premios, Shoji Meguro, vuelve con una banda sonora totalmente nueva. ",
+        "pictureUrl": "https://www.almadigitales.net/wp-content/uploads/2020/12/persona-5-royal.jpg",
+        "category": "ps4"
+    },
+    {   "id": 2, 
+        "title": "Chrono Cross - The Radical Dreamers Edition",
+        "price": 9500,"description": "descripcion del producto",
+        "pictureUrl": "https://picfiles.alphacoders.com/508/thumb-1920-508066.jpg",
+        "category": "switch"
+    },
+    {   "id": 3,
+        "title": "Xenoblade Chronicles 2",
+        "price": 9800,"description": "descripcion del producto",
+        "pictureUrl": "https://m.media-amazon.com/images/I/91oFP7GhmSL._SL1500_.jpg",
+        "category": "switch"
+    },
+    {   "id": 4,
+        "title": "Hollow Knight",
+        "price": 5600,
+        "description": "descripcion del producto",
+        "pictureUrl": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d18c832e8c956b4ef8b92862e6bf470d.png",
+        "category": "switch, ps4"
+    },
+    {   "id": 5,
+        "title": "Tales of Arise",
+        "price": 7790,
+        "description": "descripcion del producto",
+        "pictureUrl": "https://eccdn.geo-online.co.jp/ec_media_images/5135137-01.jpg",
+        "category": "ps4"
+    },
+    {   "id": 6,
+        "title": "Fire Emblem Three Houses",
+        "price": 8540,
+        "description": "descripcion del producto",
+        "pictureUrl": "https://www.nintendo.com/ph/switch/anvy/img/hero_sp.jpg",
+        "category": "switch"
+    },
+    {   "id": 7,
+        "title": "Devil May Cry 5 - Special Edition",
+        "price": 9452,
+        "description": "descripcion del producto",
+        "pictureUrl": "https://pbs.twimg.com/media/EiKIg45XgAEV7PU.png",
+        "category": "ps4"
+    },
+    {   "id": 8,
+        "title": "Tokyo Mirage Sessions #FE Encore",
+        "price": 8253,
+        "description": "descripcion del producto",
+        "pictureUrl": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/880/465/products/725602_front1-af5190f6975a4da21516364952256445-640-0.jpg",
+        "category": "switch"
+    },
+    {   "id": 9,
+        "title": "Octopath Traveler",
+        "price": 9367,
+        "description": "descripcion del producto",
+        "pictureUrl": "https://s3.gaming-cdn.com/images/products/2885/orig-fallback-v1/octopath-traveler-switch-switch-juego-nintendo-eshop-europe-cover.jpg?v=1644775801",
+        "category": "switch"
+    }
 ]

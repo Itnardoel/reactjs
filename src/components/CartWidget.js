@@ -1,3 +1,4 @@
+import React from 'react';
 import cart from '../assets/cart.svg'
 
 const CartIcon = ({cantidad}) => {

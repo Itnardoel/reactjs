@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ItemDetail = ({ item }) => {
   return (
     <div style={styles.container}>
