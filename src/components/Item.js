@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Item = ({ item }) => {
   return (
@@ -6,8 +7,8 @@ const Item = ({ item }) => {
       <div style={styles.card}>
         <img style={styles.imagen} src={item.pictureUrl} alt={item.title} />
         <h2>{item.title}</h2>
-        {/* <p>{item.description}</p> */}
         <p>${item.price}</p>
+        <Link to={`/item/${item.id}`}><button style={styles.boton}>Ver detalles</button></Link>
       </div>
     </>
   )
@@ -34,4 +35,7 @@ const styles = {
     maxHeight: 'max(10rem, 35vh)',
     aspectRatio: 4/3,
   },
+  boton: {
+    marginBottom: '1rem',
+  }
 }

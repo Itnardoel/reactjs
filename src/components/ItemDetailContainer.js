@@ -1,8 +1,17 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
+import { useState, useEffect, CSSProperties } from 'react';
 import ItemDetail from './ItemDetail';
+import  { useParams } from 'react-router-dom'
+import PuffLoader from "react-spinners/PuffLoader";
 
 const ItemDetailContainer = () => {
+
+    const override: CSSProperties = {
+        display: "block",
+        margin: "1rem auto",
+    };
+
+    const { itemId } = useParams();
     const [item, setItem] = useState({});
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -10,9 +19,9 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const getItem = async () => {
             try {
-                const response = await fetch("data.json");
+                const response = await fetch('http://localhost:3000/data.json');
                 const data = await response.json();
-                setItem(data);
+                setItem(data[itemId]);
             }
             catch (err) {
                 setError(true);
@@ -27,7 +36,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-        {loading ? <p>...Loading</p> : 
+        {loading ? <PuffLoader color={"#22e52a"} cssOverride={override} size={150} /> : 
             error ? <p>Error</p> :
                 <ItemDetail item={item}/>}
     </>

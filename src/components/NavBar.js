@@ -23,20 +23,6 @@ const NavBar = () => {
 
                 <Link to="/cart" style={styles.enlaces}><CartWidget cantidad={4}/></Link>
             </div>
-            {/* <ul style={styles.lista}>
-                <li>
-                    <a style={styles.enlaces} href="#!">Inicio</a>
-                </li>
-                <li>
-                    <a style={styles.enlaces} href="#!">Productos</a>
-                </li>
-                <li>
-                    <a style={styles.enlaces} href="#!">Nosotros</a>
-                </li>
-                <li>
-                    <CartWidget cantidad={4}/>
-                </li>
-            </ul> */}
   
         </header>
     )

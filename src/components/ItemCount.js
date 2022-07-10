@@ -8,7 +8,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if (contador < stock) {
             setContador( contador + 1);
         } if (contador >= stock) {
-            alert("No hay stock");
+            return;
         }
     }
 

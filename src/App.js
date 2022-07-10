@@ -16,12 +16,10 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer greeting='Catalogo'/>} />
-        <Route path='category/:categoryName' element={<ItemListContainer greeting='Catalogo'/>} />
+        <Route path='category/:categoryId' element={<ItemListContainer greeting='Catalogo'/>} />
         <Route path='item/:itemId' element={<ItemDetailContainer />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
-      
-      {/* <ItemDetailContainer /> */}
     </BrowserRouter>
   );
 }

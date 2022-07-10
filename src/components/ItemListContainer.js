@@ -1,47 +1,28 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
-import ItemCount from "./ItemCount";
+import { useState, useEffect, CSSProperties } from 'react';
 import ItemList from "./ItemList";
 import  { useParams } from 'react-router-dom'
+import PuffLoader from "react-spinners/PuffLoader";
 
 const ItemListContainer = ({greeting}) => {
+    
+    const override: CSSProperties = {
+        display: "block",
+        margin: "1rem auto",
+    };
 
-    const { categoryName } = useParams();
-    console.log(categoryName)
+    const { categoryId } = useParams();
     const [items, setItems] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        
-        // const URL = categoryName
-        //     ? JSON.parse("data.json").filter(item => item.category.includes(categoryName))
-        //     : "data.json";
-
-        // if (categoryName){
-        //     fetch("data.json")
-        //         .then(response => response.json())
-        //         .then(data => setItems(data.filter(item => item.category.includes(categoryName))))
-        //         .catch(err => console.log(err))
-        //         .finally(() => setLoading(false))
-        // } else {
-        //     fetch("data.json")
-        //         .then(response => response.json())
-        //         .then(data => setItems(data))
-        //         .catch(err => console.log(err))
-        //         .finally(() => setLoading(false))
-        // }
 
         const getItems = async () => {
             try {
-                const response = await fetch("data.json");
+                const response = await fetch('http://localhost:3000/data.json');
                 const data = await response.json();
-                console.log(response);
-                // const asdasd = data.filter(asd => asd.category.includes("switch"));
-                console.log(data);
-                // setItems(asdasd);
-                categoryName ? setItems(data.filter(item => item.category.includes(categoryName))) : setItems(data)
-                // setItems(data);
+                categoryId ? setItems(data.filter(item => item.category.includes(categoryId))) : setItems(data)
             }
             catch (err) {
                 setError(true);
@@ -53,17 +34,12 @@ const ItemListContainer = ({greeting}) => {
         }
         setTimeout(getItems, 2000);
         
-    }, [categoryName])
-    
-    const onAdd = (cantidad) => {
-        console.log(`Agregaste ${cantidad} al carrito`);
-    }
+    }, [categoryId])
     
     return (
         <>
             <h2>{greeting}</h2>
-            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
-            {loading ? <p>...Loading</p> : 
+            {loading ? <PuffLoader color={"#22e52a"} cssOverride={override} size={150} /> : 
                 error ? <p>Error</p> :
                     <ItemList items={items}/>} 
         </>
