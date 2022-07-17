@@ -1,15 +1,18 @@
 import React from 'react';
 import ItemCount from "./ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
+import { contexto } from './CartContext';
 
 const ItemDetail = ({ item }) => {
+
+  const { addItem } = useContext(contexto);
 
   const [added, setAdded] = useState(false);
 
   const onAdd = (quantityToAdd) => {
-    console.log(`Agregaste ${quantityToAdd} al carrito`);
     setAdded(true);
+    addItem(item, quantityToAdd);
   }
 
   return (
@@ -18,7 +21,7 @@ const ItemDetail = ({ item }) => {
         <div style={styles.caja}>
         <h2>{item.title}</h2>
         <p style={styles.texto}>{item.description}</p>
-        <p>${item.price}</p>
+        <p>Precio: ${item.price}</p>
         <p>Stock disponible: {item.stock}</p>
         {added ? <Link to={"/cart"}><button>Terminar mi compra</button></Link> : <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>}
         </div>

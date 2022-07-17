@@ -21,7 +21,7 @@ const NavBar = () => {
                     {categories.map((category) => <Link key={category.id} style={styles.enlaces} to={category.route}>{category.name}</Link>)}
                 </nav>
 
-                <Link to="/cart" style={styles.enlaces}><CartWidget cantidad={4}/></Link>
+                <Link to="/cart" style={styles.enlaces}><CartWidget /></Link>
             </div>
   
         </header>
