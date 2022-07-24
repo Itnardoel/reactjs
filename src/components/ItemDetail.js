@@ -20,10 +20,11 @@ const ItemDetail = ({ item }) => {
         <img style={styles.imagen} src={item.pictureUrl} alt={item.title} />
         <div style={styles.caja}>
         <h2>{item.title}</h2>
-        <p style={styles.texto}>{item.description}</p>
+        <p style={styles.texto}>{item.description.replaceAll("\\n", "\n")}</p>
         <p>Precio: ${item.price}</p>
         <p>Stock disponible: {item.stock}</p>
-        {added ? <Link to={"/cart"}><button>Terminar mi compra</button></Link> : <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>}
+        {added ? <Link to={"/cart"}><button>Terminar mi compra</button></Link> : 
+          item.stock === 0 ? null : <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>}
         </div>
     </div>
   )
