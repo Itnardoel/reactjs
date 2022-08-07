@@ -1,6 +1,7 @@
 # Ecommerce con ReactJS
 
-##Caracteristicas
+## Caracteristicas
+
 Este es un ecommerce utilizando **create react app**.
 Simula la compra de uno o varios items, agregandolos a un carrito.
 Utiliza firebase como base de datos.
@@ -18,7 +19,7 @@ $ npm install
 $ npm start
 ```
 
-##Herramientas utilizadas
+## Herramientas utilizadas
 - React Router Dom
 - Firebase
     - Firestore
