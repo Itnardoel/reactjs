@@ -12,8 +12,6 @@ Para clonar y correr la aplicacion, necesitas [Git](https://git-scm.com) y [Node
 ```bash
 # Clone this repository
 $ git clone https://github.com/amitmerchant1990/electron-markdownify
-# Go into the repository
-$ cd electron-markdownify
 # Install dependencies
 $ npm install
 # Run the app
