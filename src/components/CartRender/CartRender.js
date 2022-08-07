@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from "react";
-import { contexto } from './CartContext';
-import trashIcon from '../assets/trash.svg'
+import { contexto } from '../CartContext/CartContext';
+import trashIcon from '../../assets/trash.svg'
 
 const CartRender = () => {
 

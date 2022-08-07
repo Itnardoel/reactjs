@@ -3,7 +3,7 @@ import { useState, useEffect, CSSProperties } from 'react';
 import ItemDetail from './ItemDetail';
 import  { useParams } from 'react-router-dom'
 import PuffLoader from "react-spinners/PuffLoader";
-import { db } from "./Firebase";
+import { db } from "../Firebase/Firebase";
 import { getDoc, collection, doc } from "firebase/firestore";
 
 
@@ -37,21 +37,6 @@ const ItemDetailContainer = () => {
         })
         .finally(() => setLoading(false))
 
-        // const getItem = async () => {
-        //     try {
-        //         const response = await fetch('http://localhost:3000/data.json');
-        //         const data = await response.json();
-        //         setItem(data[itemId]);
-        //     }
-        //     catch (err) {
-        //         setError(true);
-        //         console.log(err);
-        //     }
-        //     finally {
-        //         setLoading(false);
-        //     }
-        // }
-        // setTimeout(getItem, 2000);
     }, [])
 
   return (

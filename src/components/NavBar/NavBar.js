@@ -1,20 +1,42 @@
 import React from 'react';
-import logo from '../logo.svg';
-import CartWidget from './CartWidget';
+import { useState, useEffect } from 'react';
+import logo from '../../logo.svg';
+import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
+import { db } from "../Firebase/Firebase";
+import { getDocs, collection } from "firebase/firestore";
+import Login from "../Login/Login"
 
 const NavBar = () => {
-    const categories = [
-        {name: "Switch", id: 0, route: "category/switch"},
-        {name: "PS4", id: 1, route: "category/ps4"},
-    ];
+
+    const [categories, setCategories] = useState([]);
+
+    const categoriesCollection = collection(db, "categorias");
+
+    useEffect(() => {
+
+        getDocs(categoriesCollection)
+        .then(response => {
+            const data = response.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    ...doc.data(),
+                }
+            })
+            setCategories(data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        
+    }, [])
 
     return (
         <header style={styles.cabecera}>
 
             <Link to="/"><img style={styles.imagen} src={logo} className="App-logo" alt="" /></Link>
 
-            <h1>Tienda</h1>
+            <h1>RPG Mania</h1>
             
             <div style={styles.lista}>
                 <nav>
@@ -22,6 +44,8 @@ const NavBar = () => {
                 </nav>
 
                 <Link to="/cart" style={styles.enlaces}><CartWidget /></Link>
+
+                <Login />
             </div>
   
         </header>

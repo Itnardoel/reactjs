@@ -1,7 +1,7 @@
 import React from 'react';
-import cart from '../assets/cart.svg'
+import cart from '../../assets/cart.svg'
 import { useContext } from "react";
-import { contexto } from './CartContext';
+import { contexto } from '../CartContext/CartContext';
 
 const CartIcon = () => {
 

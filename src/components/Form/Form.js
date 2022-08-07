@@ -1,8 +1,21 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
+import { auth } from "../Firebase/Firebase"
+import { onAuthStateChanged } from "firebase/auth"
 
 const Form = ({ checkout }) => {
+
+  const [user, setUser] = useState({});
+  
+  useEffect(() => {
+    
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+  })
+    
+  }, [])
 
   const ArgTelVal = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/
 
@@ -29,6 +42,7 @@ const Form = ({ checkout }) => {
   });
 
   return (
+
     <form style={styles.formulario} onSubmit={formik.handleSubmit}>
       <div style={styles.inputContainer}>
         <input style={styles.input}
@@ -54,20 +68,25 @@ const Form = ({ checkout }) => {
         />
         {formik.touched.telefono && formik.errors.telefono ? <p style={styles.p}>{formik.errors.telefono}</p> : null}
       </div>
-      <div style={styles.inputContainer}>
-        <input style={styles.input} 
-          id='email'
-          type='email'
-          name='email'
-          placeholder='Email'
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email ? <p style={styles.p}>{formik.errors.email}</p> : null}
-      </div>
-      <button style={styles.boton} type='submit'>Confirmar</button>
+      {user ? <button style={styles.boton} onClick={() => checkout({nombre: formik.values.nombre, telefono: formik.values.telefono, email: user.email})}>Comprar como {user.email}</button>
+            : <>
+                <div style={styles.inputContainer}>
+                  <input style={styles.input} 
+                    id='email2'
+                    type='email'
+                    name='email'
+                    placeholder='Email'
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                  />
+                  {formik.touched.email && formik.errors.email ? <p style={styles.p}>{formik.errors.email}</p> : null}
+                </div>
+                <button style={styles.boton} type='submit'>Confirmar</button>
+              </>
+      }
     </form>
+
   )
 }
 
@@ -84,6 +103,13 @@ const styles = {
   },
   input: {
     marginTop: '0.5rem',
+    width: '100%',
+    padding: '12px 20px',
+    margin: '8px 0',
+    boxSizing: 'border-box',
+    border: 'none',
+    backgroundColor: '#555555',
+    color: 'white',
   },
   p: {
     margin: 0,
@@ -92,5 +118,14 @@ const styles = {
   },
   boton: {
     margin: '0.5rem 0',
+    border: '2px solid #555555',
+    color: 'black',
+    padding: '16px 32px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    fontSize: '16px',
+    transitionDuration: '0.4s',
+    cursor: 'pointer',
+    backgroundColor: 'white',
   }
 }

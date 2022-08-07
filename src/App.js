@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
-import ItemDetailContainer from './components/ItemDetailContainer'
-import Cart from './components/Cart'
-import CustomProvider from './components/CartContext';
+import NavBar from './components/NavBar/NavBar'
+import Footer from './components/Footer/Footer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './components/Cart/Cart'
+import CustomProvider from './components/CartContext/CartContext';
 import {
   BrowserRouter,
   Routes,
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='item/:itemId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
+        <Footer />
       </CustomProvider>
     </BrowserRouter>
   );

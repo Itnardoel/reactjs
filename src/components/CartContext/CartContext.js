@@ -5,14 +5,13 @@ const { Provider } = contexto;
 
 const CustomProvider = ({ children }) => {
 
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem('Cart')) || []);
     const [quantity, setQuantity] = useState(0);
     const [total, setTotal] = useState(0);
 
     const addItem = (item, quantity) => {
 
         if(isInCart(item.id)){
-            console.log("Este item ya estaba en el carrito")
             const aux = [...items];
             const found = aux.find(i => i.id === item.id);
             found.quantity += quantity;
@@ -23,19 +22,16 @@ const CustomProvider = ({ children }) => {
             
             setItems(aux);
         } else {
-            console.log(`Añadiste ${quantity} ${item.title} al carrito`);
-            const newItem = {...item, quantity: quantity} //agrego quantity al objeto
-            setItems([...items, newItem]); //"push" del contenido
+            const newItem = {...item, quantity: quantity} 
+            setItems([...items, newItem]);
         }
     }
 
     const removeItem = (itemId) => {
-        console.log(`Borraste el item de id=${itemId}`);
         setItems(items.filter((item) => item.id !== itemId));
     }
 
     const clear = () => {
-        console.log("Borraste todos los items");
         setItems([]);
     }
 
@@ -55,12 +51,17 @@ const CustomProvider = ({ children }) => {
         setTotal(total);
     }
 
+    const setLocalStorage = () => {
+        localStorage.setItem('Cart', JSON.stringify(items));
+    }
+
     useEffect(() => {
+
+        setLocalStorage();
         getQuantity();
         getTotalPrice();
+
     },[items])
-    
-    console.log(items);
 
   return (
     <Provider value={{items,addItem,removeItem,clear,quantity,total}}>
