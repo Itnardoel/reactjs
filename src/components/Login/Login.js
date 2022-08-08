@@ -87,7 +87,6 @@ const Login = () => {
                     {formik.touched.password && formik.errors.password ? <p style={styles.p}>{formik.errors.password}</p> : null}
                 </div>
                 <button style={styles.boton} onClick={register}>Register</button>
-                {/* <Link to="/register"><button>Registrarse</button></Link> */}
                 <button style={styles.boton} onClick={logIn}>Login</button>
             </div>
         }

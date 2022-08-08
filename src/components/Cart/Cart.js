@@ -26,7 +26,7 @@ const Cart = () => {
     })
     .then((response) => {
       setIdVenta(response.id);
-
+      console.log(idVenta);
       items.forEach(item => {
         const updateCollection = doc(db, "productos", item.id);
         updateDoc(updateCollection, {stock: item.stock - item.quantity})

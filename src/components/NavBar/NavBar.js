@@ -46,6 +46,7 @@ const NavBar = () => {
                 <Link to="/cart" style={styles.enlaces}><CartWidget /></Link>
 
                 <Login />
+
             </div>
   
         </header>
