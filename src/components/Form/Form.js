@@ -23,8 +23,9 @@ const Form = ({ checkout }) => {
     initialValues: {
       nombre: "",
       telefono: "",
-      email: "",
+      email: user ? `${user.email}` : "",
     },
+    enableReinitialize: true,
     validationSchema: Yup.object({
       nombre: Yup.string()
         .max(15, "Nombre no valido")
@@ -68,7 +69,7 @@ const Form = ({ checkout }) => {
         />
         {formik.touched.telefono && formik.errors.telefono ? <p style={styles.p}>{formik.errors.telefono}</p> : null}
       </div>
-      {user ? <button style={styles.boton} onClick={() => checkout({nombre: formik.values.nombre, telefono: formik.values.telefono, email: user.email})}>Comprar como {user.email}</button>
+      {user ? <button style={styles.boton} type="submit">Comprar como {user.email}</button>
             : <>
                 <div style={styles.inputContainer}>
                   <input style={styles.input} 

@@ -35,7 +35,7 @@ const CartRender = () => {
                 })}
             </tbody>
             </table>
-            <button onClick={clear}>Vaciar el carrito</button>
+            <button style={styles.boton} onClick={clear}>Vaciar el carrito</button>
             <h2 style={styles.texto}>Total ${total}</h2>
     </>
   )
@@ -60,5 +60,17 @@ const styles = {
     },
     texto: {
       textAlign: 'center',
+    },
+    boton: {
+      margin: '0.5rem 0',
+      border: '2px solid #555555',
+      color: 'black',
+      padding: '8px 16px',
+      textAlign: 'center',
+      textDecoration: 'none',
+      fontSize: '16px',
+      transitionDuration: '0.4s',
+      cursor: 'pointer',
+      backgroundColor: 'white',
     }
   }

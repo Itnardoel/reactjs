@@ -53,6 +53,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
             transitionDuration: '0.4s',
             cursor: 'pointer',
             backgroundColor: isHover ? '#555555' : 'white',
+        },
+        boton2: {
+            marginBottom: '1rem',
+            border: '2px solid #555555',
+            textAlign: 'center',
+            textDecoration: 'none',
+            margin: '4px 2px',
+            transitionDuration: '0.4s',
+            cursor: 'pointer',
         }
     }
 
@@ -60,9 +69,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <>
             <div style={styles.caja}>
                 <div style={styles.botones}>
-                    <button onClick={restar}>-</button>
-                    <p>{contador}</p>
-                    <button onClick={sumar}>+</button>
+                    <button onClick={restar} style={styles.boton2}>-</button>
+                    <h4>{contador}</h4>
+                    <button onClick={sumar} style={styles.boton2}>+</button>
                 </div>
                 <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={styles.boton} onClick={() => {
                     if (stock >= 1){

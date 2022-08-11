@@ -1,16 +1,20 @@
 import React from 'react'
-import { useContext, useState } from "react";
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import { contexto } from '../CartContext/CartContext';
 import CartRender from '../CartRender/CartRender';
 import { db } from "../Firebase/Firebase";
 import { doc, addDoc, collection, serverTimestamp, updateDoc } from "firebase/firestore";
 import Form from '../Form/Form';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Cart = () => {
 
   const { items, total, clear } = useContext(contexto)
-  const [idVenta, setIdVenta] = useState("")
+
+  const MySwal = withReactContent(Swal);
+  const navigate = useNavigate();
 
   const checkout = (buyerData) => {
 
@@ -25,15 +29,20 @@ const Cart = () => {
       total: total,
     })
     .then((response) => {
-      setIdVenta(response.id);
-      console.log(idVenta);
+      MySwal.fire({
+        title: 'Gracias por tu compra',
+        text: `Tu orden de compra es: ${response.id}`,
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      })
       items.forEach(item => {
-        const updateCollection = doc(db, "productos", item.id);
-        updateDoc(updateCollection, {stock: item.stock - item.quantity})
-      });
-    })
-    .finally(() => {
-      clear();
+          const updateCollection = doc(db, "productos", item.id);
+          updateDoc(updateCollection, {stock: item.stock - item.quantity})
+        });
+      })
+      .finally(() => {
+        clear();
+        navigate('/');
     });
   }
  
